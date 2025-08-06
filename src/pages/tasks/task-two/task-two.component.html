@@ -1,0 +1,66 @@
+<div class="container-fluid min-vh-100 d-flex flex-column bg-white text-dark p-3 justify-content-between">
+
+  <!-- Header -->
+  <div class="d-flex justify-content-between align-items-center w-100">
+   <button class="btn p-0 text-dark" aria-label="Go back" routerLink="/home">
+      <igx-icon fontSet="material" class="fs-4">arrow_back</igx-icon>
+    </button>
+    <div class="d-flex flex-column align-items-center text-center mx-2">
+  <h2 class="fs-6 fw-semibold mb-1">BT01191918898</h2>
+
+  <div class="d-flex align-items-center gap-2 text-muted small mb-2">
+    <span class="d-inline-block rounded bg-primary" style="width: 14px; height: 6px;"></span>
+      <span class="fs-7">85%</span>
+  </div>
+  <span class="fs-7">Aug 7, 2020 2:55 PM</span>
+</div>
+
+    <div class="invisible" style="width: 24px;"></div> <!-- Spacer -->
+  </div>
+
+  <!-- Main Bluetooth Status (Animated Content Switch) -->
+  <div [@fadeInOut] class="d-flex flex-column align-items-center mt-4">
+    <div class="rounded-circle border border-3 border-primary d-flex align-items-center justify-content-center mb-2" style="width: 10rem; height: 10rem;">
+      <div class="text-primary text-center">
+        <igx-icon fontSet="material" class="fs-3">bluetooth</igx-icon>
+        <div class="mt-2 small">Connectable</div>
+      </div>
+    </div>
+
+    <div class="text-center mt-2">
+      <igx-icon fontSet="material" class="text-secondary fs-6">bluetooth_audio</igx-icon>
+      <p class="small text-secondary mb-0">Bluetooth</p>
+    </div>
+  </div>
+
+  <!-- Bottom Navigation Tabs -->
+  <div class="row text-center mt-4 mb-3">
+    <div class="col-3" [class.text-primary]="activeTab === 'away'" (click)="activeTab = 'away'">
+      <div class="d-flex flex-column align-items-center">
+        <igx-icon fontSet="material" class="fs-5">home</igx-icon>
+        <span class="fs-7">Away</span>
+      </div>
+    </div>
+    <div class="col-3" [class.text-primary]="activeTab === 'activities'" (click)="activeTab = 'activities'">
+      <div class="d-flex flex-column align-items-center">
+        <igx-icon fontSet="material" class="fs-5">notifications</igx-icon>
+        <span class="fs-7">Activities</span>
+      </div>
+    </div>
+    <div class="col-3" [class.text-primary]="activeTab === 'share'" (click)="activeTab = 'share'">
+      <div class="d-flex flex-column align-items-center">
+        <igx-icon fontSet="material" class="fs-5">share</igx-icon>
+        <span class="fs-7">Share</span>
+      </div>
+    </div>
+    <div class="col-3" [class.text-primary]="activeTab === 'settings'" (click)="activeTab = 'settings'">
+      <div class="d-flex flex-column align-items-center">
+        <igx-icon fontSet="material" class="fs-5">settings</igx-icon>
+        <span class="fs-7">Settings</span>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>

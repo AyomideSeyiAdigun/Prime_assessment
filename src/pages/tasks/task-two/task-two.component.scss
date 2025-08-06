@@ -1,0 +1,23 @@
+// For Bootstrap font scaling compatibility
+.fs-7 {
+  font-size: 0.65rem;
+}
+ igx-icon {
+  cursor: pointer;
+  }
+
+// Optional: style tweak for mobile fit
+@media (max-width: 375px) {
+  h2 {
+    font-size: 0.95rem;
+  }
+
+  igx-icon {
+    font-size: 1.1rem !important;
+  }
+
+  .rounded-circle {
+    width: 8rem !important;
+    height: 8rem !important;
+  }
+}

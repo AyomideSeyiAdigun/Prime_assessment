@@ -1,0 +1,56 @@
+<!-- Bootstrap Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Grids</a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" [class.active]="activeGrid === 'grid1'" (click)="activeGrid = 'grid1'">Grid1</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [class.active]="activeGrid === 'grid2'" (click)="activeGrid = 'grid2'">Grid2</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [class.active]="activeGrid === 'grid3'" (click)="activeGrid = 'grid3'">Grid3</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [class.active]="activeGrid === 'grid4'" (click)="activeGrid = 'grid4'">Grid4</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Grid Container -->
+<div class="container mt-4">
+  <!-- Grid1: Paging -->
+  <igx-grid *ngIf="activeGrid === 'grid1'" [data]="data"  #grid    autoGenerate="true">
+      <igx-paginator #paginator [(page)]="grid.page" [totalRecords]="grid.totalRecords" [perPage]="10"
+            >
+    </igx-paginator>
+  </igx-grid>
+
+  <!-- Grid2: Sorting -->
+  <igx-grid *ngIf="activeGrid === 'grid2'" [data]="data"        autoGenerate="false" >
+    <igx-column [sortable]="true" [field]="'id'"></igx-column>
+    <igx-column [sortable]="true" [field]="'name'"></igx-column>
+   <igx-column [sortable]="true" [field]="'age'"></igx-column>
+
+  </igx-grid>
+
+  <!-- Grid3: Filtering -->
+  <igx-grid *ngIf="activeGrid === 'grid3'" [data]="data"  [allowFiltering]="true"  autoGenerate="true">
+  </igx-grid>
+
+  <!-- Grid4: Editing -->
+  <igx-grid *ngIf="activeGrid === 'grid4'" [primaryKey]="'id'" [data]="data" [rowEditable]="true"  autoGenerate="false">
+        <igx-column field="name" header="name" [dataType]="'string'"></igx-column>
+        <igx-column field="age" header="age" [dataType]="'string'"></igx-column>
+       <igx-action-strip #actionstrip>
+        <igx-grid-editing-actions [addRow]="true"></igx-grid-editing-actions>
+    </igx-action-strip>
+  </igx-grid>
+
+
+
+</div>
